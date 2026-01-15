@@ -26,5 +26,18 @@ def FetchData ():
         "range": [0, 50]        # Top 50 stocks sorted by volume
     }
     
-    response = requests.post(url, json=payload)
-    return response.json()
+    res = requests.post(url, json=payload)
+    data = res.json()
+
+    clean_data = []
+
+    for stock in data["data"]:
+        clean_data.append({
+            "symbol": stock["d"][0],
+            "price": stock["d"][1],
+            "change_%": stock["d"][2],
+            "change_$": stock["d"][3],
+            "volume": stock["d"][4],
+        })
+
+    return clean_data
