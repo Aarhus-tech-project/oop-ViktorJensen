@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/viktorjensen/dev/h2/oop-ViktorJensen/backend/backend.csproj": {}
+    "/Users/viktorjensen/dev/h2/oop-ViktorJensen/Backend/Backend.csproj": {}
   },
   "projects": {
-    "/Users/viktorjensen/dev/h2/oop-ViktorJensen/backend/backend.csproj": {
+    "/Users/viktorjensen/dev/h2/oop-ViktorJensen/Backend/Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/viktorjensen/dev/h2/oop-ViktorJensen/backend/backend.csproj",
-        "projectName": "backend",
-        "projectPath": "/Users/viktorjensen/dev/h2/oop-ViktorJensen/backend/backend.csproj",
+        "projectUniqueName": "/Users/viktorjensen/dev/h2/oop-ViktorJensen/Backend/Backend.csproj",
+        "projectName": "Backend",
+        "projectPath": "/Users/viktorjensen/dev/h2/oop-ViktorJensen/Backend/Backend.csproj",
         "packagesPath": "/Users/viktorjensen/.nuget/packages/",
-        "outputPath": "/Users/viktorjensen/dev/h2/oop-ViktorJensen/backend/obj/",
+        "outputPath": "/Users/viktorjensen/dev/h2/oop-ViktorJensen/Backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/viktorjensen/.nuget/NuGet/NuGet.Config"
@@ -47,6 +47,14 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[10.0.0, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
+            "NSwag.AspNetCore": {
+              "target": "Package",
+              "version": "[14.6.3, )"
             }
           },
           "imports": [

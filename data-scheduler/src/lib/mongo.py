@@ -2,9 +2,9 @@ import os
 import pprint
 
 from pymongo.mongo_client import MongoClient
-from pymongo.server_api import ServerApi
 from dotenv import load_dotenv, find_dotenv
 from datetime import datetime
+
 def insert_stock_data(stock_data):
     """
     Docstring for insert_stock_data
@@ -13,12 +13,10 @@ def insert_stock_data(stock_data):
     """
     load_dotenv(find_dotenv())
 
-    password = os.environ.get("DB_PWD")
-
-    uri = f"mongodb+srv://viktor_adm:{password}@stock-db.xmvvmrp.mongodb.net/?appName=stock-db&tlsInsecure=true"
+    uri = "mongodb://localhost:27017"
 
     try:
-        client = MongoClient(uri, server_api=ServerApi('1'))
+        client = MongoClient(uri)
         db = client.api_data
         collection = db.stock_data
 
