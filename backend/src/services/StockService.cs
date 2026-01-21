@@ -1,4 +1,4 @@
-using StockApi.Models;
+using backend.src.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
@@ -23,7 +23,8 @@ public class StocksService
 
     public async Task<List<Stock>> GetAsync() =>
         await _stockDataCollection.Find(_ => true).ToListAsync();
-
     public async Task<Stock?> GetAsync(string id) =>
         await _stockDataCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+    public async Task<Stock?> GetBySymbolAsync(string symbol) =>
+    await _stockDataCollection.Find(x => x.symbol == symbol).FirstOrDefaultAsync();
 }

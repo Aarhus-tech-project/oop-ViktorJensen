@@ -8,6 +8,7 @@ builder.Services.Configure<MongoDbSettings>(
     builder.Configuration.GetSection("ApiDatabase"));
 
 builder.Services.AddSingleton<StocksService>();
+builder.Services.AddSingleton<PortfolioService>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(

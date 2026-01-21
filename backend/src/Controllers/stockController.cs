@@ -2,15 +2,13 @@ using backend.src.Models;
 using backend.src.services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace backend.src.Models;
+namespace backend.src.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class StockController : ControllerBase
+public class StockController(StocksService stocksService) : ControllerBase
 {
-    private readonly StocksService _stocksService;
-    public StockController( StocksService stocksService) =>
-    _stocksService = stocksService;
+    private readonly StocksService _stocksService = stocksService;
 
     [HttpGet]
     public async Task<List<Stock>> Get() =>
