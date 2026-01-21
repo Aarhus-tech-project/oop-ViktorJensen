@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace StockApi.Models;
+namespace backend.src.Models;
 
 public class Stock
 {

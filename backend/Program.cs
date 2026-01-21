@@ -1,4 +1,4 @@
-using StockApi.Models;
+using backend.src.Models;
 using backend.src.services;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,8 +1,8 @@
-using StockApi.Models;
+using backend.src.Models;
 using backend.src.services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace StockApi.Controllers;
+namespace backend.src.Models;
 
 [ApiController]
 [Route("api/[controller]")]
