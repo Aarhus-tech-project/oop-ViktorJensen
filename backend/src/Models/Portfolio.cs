@@ -9,7 +9,7 @@ public class Portfolio
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     [JsonPropertyName("id")]
-    public string? Id { get; set; }
+    public string? Id {get; set; }
     
     [BsonElement("userId")]
     [JsonPropertyName("userId")]

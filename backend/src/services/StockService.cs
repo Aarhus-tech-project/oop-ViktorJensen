@@ -26,5 +26,5 @@ public class StocksService
     public async Task<Stock?> GetAsync(string id) =>
         await _stockDataCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
     public async Task<Stock?> GetBySymbolAsync(string symbol) =>
-    await _stockDataCollection.Find(x => x.symbol == symbol).FirstOrDefaultAsync();
+    await _stockDataCollection.Find(x => x.Symbol == symbol).FirstOrDefaultAsync();
 }

@@ -17,7 +17,8 @@ public class PortfolioService
         var mongoClient = new MongoClient(mongoDbSettings.Value.ConnectionString);
         var mongoDatabase = mongoClient.GetDatabase(mongoDbSettings.Value.DatabaseName);
         
-        _portfolioCollection = mongoDatabase.GetCollection<Portfolio>("portfolios");
+        _portfolioCollection = mongoDatabase.GetCollection<Portfolio>(
+        mongoDbSettings.Value.PortfolioCollectionName);
     }
 
     // Get all stocks in a user's portfolio
@@ -33,7 +34,7 @@ public class PortfolioService
             var stock = await _stocksService.GetBySymbolAsync(portfolio.StockSymbol);
             if (stock != null)
             {
-                portfolio.CurrentPrice = (int)stock.price;
+                portfolio.CurrentPrice = (int)stock.Price;
             }
         }
 

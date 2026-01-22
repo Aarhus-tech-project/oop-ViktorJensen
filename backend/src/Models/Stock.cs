@@ -13,13 +13,13 @@ public class Stock
 
     [BsonElement("symbol")]
     [JsonPropertyName("symbol")]
-    public string symbol {get; set; } = null!;
+    public string Symbol {get; set; } = null!;
 
     [BsonElement("price")]
     [JsonPropertyName("price")]
-    public decimal price {get; set; }
+    public decimal Price {get; set; }
 
     [BsonElement("timestamp")]
     [JsonPropertyName("timestamp")]
-    public DateTime timestamp {get; set; }
+    public DateTime Timestamp {get; set; }
 }
