@@ -30,10 +30,8 @@ public class PortfolioController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Portfolio>> AddToPortfolio([FromBody] Portfolio portfolio)
     {
-        // IMPORTANT: let MongoDB generate the ObjectId
         portfolio.Id = null;
 
-        // Ensure server-controlled fields
         portfolio.PurchaseDate = DateTime.UtcNow;
 
         var created = await _portfolioService.AddToPortfolioAsync(portfolio);

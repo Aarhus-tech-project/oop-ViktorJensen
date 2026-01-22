@@ -13,7 +13,7 @@ public class StockController(StocksService stocksService) : ControllerBase
     [HttpGet]
     public async Task<List<Stock>> Get() =>
         await _stocksService.GetAsync();
-    
+
     [HttpGet("{id:length(24)}")]
     public async Task<ActionResult<Stock>> Get(string id)
     {

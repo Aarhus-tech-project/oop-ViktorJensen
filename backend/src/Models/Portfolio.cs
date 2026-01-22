@@ -10,7 +10,6 @@ public class Portfolio
     [BsonRepresentation(BsonType.ObjectId)]
     [JsonPropertyName("id")]
     public string? Id {get; set; }
-    
     [BsonElement("userId")]
     [JsonPropertyName("userId")]
     public string UserId { get; set; } = null!;
@@ -30,16 +29,4 @@ public class Portfolio
     [BsonElement("purchaseDate")]
     [JsonPropertyName("purchaseDate")]
     public DateTime PurchaseDate { get; set; }
-
-    [BsonElement("currentPrice")]
-    [JsonPropertyName("currentPrice")]
-    public int CurrentPrice { get; set; }
-
-    [BsonIgnore]
-    [JsonPropertyName("gainLoss")]
-    public decimal GainLoss => (CurrentPrice - PurchasePrice) * Quantity;
-
-    [BsonIgnore]
-    [JsonPropertyName("gainLossPercent")]
-    public decimal GainLossPercent => PurchasePrice != 0 ? (CurrentPrice - PurchasePrice) / PurchasePrice * 100 : 0;
 }
