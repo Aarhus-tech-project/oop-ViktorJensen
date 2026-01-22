@@ -28,7 +28,6 @@ public class PortfolioService
     }
     public async Task<Portfolio> AddToPortfolioAsync(Portfolio portfolio)
     {
-        portfolio.PurchaseDate = DateTime.UtcNow;
         await _portfolioCollection.InsertOneAsync(portfolio);
         return portfolio;
     }
@@ -45,13 +44,10 @@ public class PortfolioService
     public async Task<PortfolioSummary> GetPortfolioSummaryAsync(string userId)
     {
         var portfolios = await GetUserPortfolioAsync(userId);
-        
-        var totalInvested = portfolios.Sum(p => p.PurchasePrice * p.Quantity);
         return new PortfolioSummary
         {
             UserId = userId,
             Holdings = portfolios,
-            TotalInvested = totalInvested,
         };
     }
 }

@@ -6,13 +6,10 @@ namespace backend.src.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class PortfolioController : ControllerBase
+public class PortfolioController(PortfolioService portfolioService) : ControllerBase
 {
-    private readonly PortfolioService _portfolioService;
+    private readonly PortfolioService _portfolioService = portfolioService;
 
-    public PortfolioController(PortfolioService portfolioService) =>
-        _portfolioService = portfolioService;
-    
     [HttpGet("{userId}")]
     public async Task<ActionResult<List<Portfolio>>> GetUserPortfolio(string userId)
     {
@@ -31,8 +28,6 @@ public class PortfolioController : ControllerBase
     public async Task<ActionResult<Portfolio>> AddToPortfolio([FromBody] Portfolio portfolio)
     {
         portfolio.Id = null;
-
-        portfolio.PurchaseDate = DateTime.UtcNow;
 
         var created = await _portfolioService.AddToPortfolioAsync(portfolio);
 

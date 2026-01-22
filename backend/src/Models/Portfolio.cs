@@ -14,19 +14,15 @@ public class Portfolio
     [JsonPropertyName("userId")]
     public string UserId { get; set; } = null!;
 
-    [BsonElement("stockSymbol")]
-    [JsonPropertyName("stockSymbol")]
-    public string StockSymbol { get; set; } = null!;
+    [BsonElement("cashBalance")]
+    [JsonPropertyName("cashBalance")]
+    public decimal CashBalance { get; set; }
 
-    [BsonElement("quantity")]
-    [JsonPropertyName("quantity")]
-    public int Quantity { get; set; }
+    [BsonElement("totalValue")]
+    [JsonPropertyName("totalValue")]
+    public decimal TotalValue { get; set; }
 
-    [BsonElement("purchasePrice")]
-    [JsonPropertyName("purchasePrice")]
-    public int PurchasePrice { get; set; }
-
-    [BsonElement("purchaseDate")]
-    [JsonPropertyName("purchaseDate")]
-    public DateTime PurchaseDate { get; set; }
+    [BsonElement("holdings")]
+    [JsonPropertyName("holdings")]
+    public List<Holding> Holdings { get; set; } = new();
 }
