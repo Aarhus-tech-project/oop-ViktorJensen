@@ -24,4 +24,25 @@ public class StockController(StocksService stocksService) : ControllerBase
         }
         return Stock;
     }
+
+    [HttpGet("{symbol}")]
+    public async Task<ActionResult<Stock>> GetBySymbol(string symbol)
+    {
+        var Stock = await _stocksService.GetBySymbolAsync(symbol);
+        if (Stock is null)
+        {
+            return NotFound($"Stock with symbol '{symbol}' not found");
+        }
+        return Ok(Stock);
+    }
+    [HttpGet("paged")]
+    public async Task<ActionResult<List<Stock>>> GetPaged(
+    [FromQuery] int page = 1,
+    [FromQuery] int pageSize = 50)
+    {
+    var stocks = await _stocksService.GetPagedAsync(page, pageSize);
+    return Ok(stocks);
+    }
 }
+
+// GetLazyLoadAsync

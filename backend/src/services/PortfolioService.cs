@@ -21,10 +21,18 @@ public class PortfolioService
     }
     public async Task<List<Portfolio>> GetUserPortfolioAsync(string userId)
     {
-        var portfolios = await _portfolioCollection
+        try
+        {
+            var portfolios = await _portfolioCollection
             .Find(x => x.UserId == userId)
             .ToListAsync();
-        return portfolios;
+            return portfolios;
+        }
+        catch (System.Exception)
+        {
+            
+            throw;
+        }
     }
     public async Task<Portfolio> AddToPortfolioAsync(Portfolio portfolio)
     {
