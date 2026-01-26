@@ -23,14 +23,6 @@ public class StocksService
         await _stockDataCollection.Find(stock => stock.Id == id).FirstOrDefaultAsync();
     public async Task<Stock?> GetBySymbolAsync(string symbol) =>
     await _stockDataCollection.Find(stock => stock.Symbol == symbol).FirstOrDefaultAsync();
-    // public async Task<List<Stock>> GetTop500Async()
-    // {
-    //     return await _stockDataCollection
-    //         .Find(_ => true)
-    //         .SortByDescending(s => s.Price)
-    //         .Limit(500)
-    //         .ToListAsync();
-    // }
     public async Task<List<Stock>> GetPagedAsync(int page, int pageSize)
     {
         return await _stockDataCollection

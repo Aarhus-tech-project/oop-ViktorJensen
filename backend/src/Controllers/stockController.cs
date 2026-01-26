@@ -44,5 +44,3 @@ public class StockController(StocksService stocksService) : ControllerBase
     return Ok(stocks);
     }
 }
-
-// GetLazyLoadAsync

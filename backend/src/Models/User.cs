@@ -21,13 +21,4 @@ public class User
     [BsonElement("pwdHash")]
     [JsonPropertyName("pwdHash")]
     public string PwdHash { get; set; } = null!;
-
-    [BsonElement("createdAt")]
-    [JsonPropertyName("createdAt")]
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
-    [BsonElement("updatedAt")]
-    [JsonPropertyName("updatedAt")]
-    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
-
 }

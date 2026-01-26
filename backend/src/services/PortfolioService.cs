@@ -28,9 +28,8 @@ public class PortfolioService
             .ToListAsync();
             return portfolios;
         }
-        catch (System.Exception)
+        catch (Exception)
         {
-            
             throw;
         }
     }
