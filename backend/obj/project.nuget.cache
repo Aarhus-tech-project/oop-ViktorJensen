@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/pRTVAcszUI=",
+  "dgSpecHash": "fugIMmt4n2M=",
   "success": true,
-  "projectFilePath": "/Users/viktorjensen/dev/h2/oop-ViktorJensen/Backend/Backend.csproj",
+  "projectFilePath": "/Users/viktorjensen/dev/h2/oop-ViktorJensen/backend/backend.csproj",
   "expectedPackageFiles": [
     "/Users/viktorjensen/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",
     "/Users/viktorjensen/.nuget/packages/microsoft.aspnetcore.openapi/10.0.0/microsoft.aspnetcore.openapi.10.0.0.nupkg.sha512",

@@ -10,17 +10,17 @@ public class PortfolioController(PortfolioService portfolioService) : Controller
 {
     private readonly PortfolioService _portfolioService = portfolioService;
 
-    [HttpGet("{userId}")]
-    public async Task<ActionResult<List<Portfolio>>> GetUserPortfolio(string userId)
+    [HttpGet("{id}")]
+    public async Task<ActionResult<List<Portfolio>>> GetUserPortfolio(string id)
     {
-        var portfolio = await _portfolioService.GetUserPortfolioAsync(userId);
+        var portfolio = await _portfolioService.GetUserPortfolioAsync(id);
         return Ok(portfolio);
     }
 
-    [HttpGet("{userId}/summary")]
-    public async Task<ActionResult<PortfolioSummary>> GetPortfolioSummary(string userId)
+    [HttpGet("{id}/summary")]
+    public async Task<ActionResult<PortfolioSummary>> GetPortfolioSummary(string id)
     {
-        var summary = await _portfolioService.GetPortfolioSummaryAsync(userId);
+        var summary = await _portfolioService.GetPortfolioSummaryAsync(id);
         return Ok(summary);
     }
     
@@ -33,7 +33,7 @@ public class PortfolioController(PortfolioService portfolioService) : Controller
 
         return CreatedAtAction(
             nameof(GetUserPortfolio),
-            new { userId = created.UserId },
+            new { id = created.Id },
             created
         );
     }

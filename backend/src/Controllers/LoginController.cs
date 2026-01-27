@@ -16,7 +16,7 @@ namespace backend.src.Controllers;
         var User = await _userService.GetUserByUsernameAsync(username);
         if (User is null)
         {
-            return NotFound($"Stock with symbol '{username}' not found");
+            return NotFound($"'{username}' not found");
         }
         return Ok(User);
     }

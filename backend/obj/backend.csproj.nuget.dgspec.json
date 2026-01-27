@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/viktorjensen/dev/h2/oop-ViktorJensen/Backend/Backend.csproj": {}
+    "/Users/viktorjensen/dev/h2/oop-ViktorJensen/backend/backend.csproj": {}
   },
   "projects": {
-    "/Users/viktorjensen/dev/h2/oop-ViktorJensen/Backend/Backend.csproj": {
+    "/Users/viktorjensen/dev/h2/oop-ViktorJensen/backend/backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/viktorjensen/dev/h2/oop-ViktorJensen/Backend/Backend.csproj",
-        "projectName": "Backend",
-        "projectPath": "/Users/viktorjensen/dev/h2/oop-ViktorJensen/Backend/Backend.csproj",
+        "projectUniqueName": "/Users/viktorjensen/dev/h2/oop-ViktorJensen/backend/backend.csproj",
+        "projectName": "backend",
+        "projectPath": "/Users/viktorjensen/dev/h2/oop-ViktorJensen/backend/backend.csproj",
         "packagesPath": "/Users/viktorjensen/.nuget/packages/",
-        "outputPath": "/Users/viktorjensen/dev/h2/oop-ViktorJensen/Backend/obj/",
+        "outputPath": "/Users/viktorjensen/dev/h2/oop-ViktorJensen/backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/viktorjensen/.nuget/NuGet/NuGet.Config"

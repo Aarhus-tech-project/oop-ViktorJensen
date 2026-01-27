@@ -19,12 +19,12 @@ public class PortfolioService
         _portfolioCollection = mongoDatabase.GetCollection<Portfolio>(
         mongoDbSettings.Value.PortfolioCollectionName);
     }
-    public async Task<List<Portfolio>> GetUserPortfolioAsync(string userId)
+    public async Task<List<Portfolio>> GetUserPortfolioAsync(string id)
     {
         try
         {
             var portfolios = await _portfolioCollection
-            .Find(x => x.UserId == userId)
+            .Find(portfolio => portfolio.Id == id)
             .ToListAsync();
             return portfolios;
         }
@@ -41,19 +41,18 @@ public class PortfolioService
     public async Task UpdatePortfolioAsync(string id, Portfolio portfolio)
     {
         await _portfolioCollection.ReplaceOneAsync(
-            x => x.Id == id, portfolio);
+            portfolio=> portfolio.Id == id, portfolio);
     }
     public async Task<bool> RemoveFromPortfolioAsync(string id)
     {
-        var result = await _portfolioCollection.DeleteOneAsync(x => x.Id == id);
+        var result = await _portfolioCollection.DeleteOneAsync(portfolio => portfolio.Id == id);
         return result.DeletedCount > 0;
     }
-    public async Task<PortfolioSummary> GetPortfolioSummaryAsync(string userId)
+    public async Task<PortfolioSummary> GetPortfolioSummaryAsync(string id)
     {
-        var portfolios = await GetUserPortfolioAsync(userId);
+        var portfolios = await GetUserPortfolioAsync(id);
         return new PortfolioSummary
         {
-            UserId = userId,
             Holdings = portfolios,
         };
     }
