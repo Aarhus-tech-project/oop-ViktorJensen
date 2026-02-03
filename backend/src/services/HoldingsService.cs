@@ -32,7 +32,7 @@ public class HoldingsService
             throw new Exception("Portfolio not found");
 
         var existingHolding = portfolio.Holdings
-            .FirstOrDefault(h => h.Symbol == request.Symbol);
+            .FirstOrDefault(holdings => holdings.Symbol == request.Symbol);
 
         if (existingHolding == null)
         {
@@ -57,7 +57,7 @@ public class HoldingsService
         portfolio.CashBalance -= cost;
 
         await _portfolioCollection.ReplaceOneAsync(
-            p => p.Id == portfolio.Id,
+            portfolio => portfolio.Id == portfolio.Id,
             portfolio
         );
     }

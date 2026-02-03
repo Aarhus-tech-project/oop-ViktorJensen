@@ -41,7 +41,7 @@ public class PortfolioService
     public async Task UpdatePortfolioAsync(string id, Portfolio portfolio)
     {
         await _portfolioCollection.ReplaceOneAsync(
-            portfolio=> portfolio.Id == id, portfolio);
+            portfolio => portfolio.Id == id, portfolio);
     }
     public async Task<bool> RemoveFromPortfolioAsync(string id)
     {
